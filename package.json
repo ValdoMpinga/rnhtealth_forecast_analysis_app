@@ -1,0 +1,27 @@
+{
+  "name": "forecast_analysis_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit && node dist/script.js",
+    "start": "tsc && node dist/script.js",
+    "dev": "concurrently \"tsc -w\" \"nodemon dist/script.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@supabase/supabase-js": "^2.24.0",
+    "@types/dotenv": "^8.2.0",
+    "@types/node": "^18.16.2",
+    "concurrently": "^8.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.1.3",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "typescript": "^5.0.4"
+  }
+}
