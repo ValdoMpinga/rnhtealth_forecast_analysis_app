@@ -23,15 +23,16 @@ export class SupabaseHelper {
     }
   }
 
-  async getBiLSTMForecasts() {
+  async getAnalysisData() {
     try {
       await this.initialize();
 
       const { data, error } = await this.supabase
-        .from("Bi_LSTM_Forecasts")
+        .from("analysisview")
         .select("*");
 
-      console.log(data);
+      console.log(data.length);
+      // console.log(data);
 
       return data;
     } catch (error) {
@@ -40,37 +41,4 @@ export class SupabaseHelper {
     }
   }
 
-  async getLSTMForecasts() {
-    try {
-      await this.initialize();
-
-      const { data, error } = await this.supabase
-        .from("LSTM_Forecasts")
-        .select("*");
-
-      console.log(data);
-
-      return data;
-    } catch (error) {
-      console.error("Error retrieving LSTM_Forecasts:", error);
-      return null;
-    }
-  }
-
-  async getMeasurements() {
-    try {
-      await this.initialize();
-
-      const { data, error } = await this.supabase
-        .from("Measurements")
-        .select("*");
-
-      console.log(data);
-
-      return data;
-    } catch (error) {
-      console.error("Error retrieving Measurements:", error);
-      return null;
-    }
-  }
 }
